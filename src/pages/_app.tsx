@@ -3,18 +3,6 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import '../styles/globals.css';
 
-if (process.env.NODE_ENV === 'development') {
-  if (typeof window === 'undefined') {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { server } = require('../mocks/server');
-    server.listen();
-  } else {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { worker } = require('../mocks/browser');
-    worker.start();
-  }
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SWRConfig
