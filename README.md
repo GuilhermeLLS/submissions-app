@@ -1,17 +1,13 @@
 # Submissions App
 
-This project uses [NextJs with Chakra-ui Boilerplate](https://i.imgur.com/WfNLFV8.png)
-
-This is a [Next.js](https://nextjs.org/) boilerplate
+This project was bootstraped with [NextJs with Chakra-ui Boilerplate](https://i.imgur.com/WfNLFV8.png)
 
 ## Getting Started
 
-To create a project from this boilerplate run:
-
+Install dependencies:
 ```bash
-yarn create next-app MY_PROJECT_NAME --example https://github.com/Lukazovic/nextjs-with-chakra-ui-boilerplate
+yarn install
 ```
-
 Then, run the development server:
 
 ```bash
