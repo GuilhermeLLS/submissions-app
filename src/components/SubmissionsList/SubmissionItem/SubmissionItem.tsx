@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Text, Flex, Spinner, Link as ChakraLink } from '@chakra-ui/react';
-import { parseDate } from './SubmissionItem.utils';
+import { parseDate } from 'utils/component-utils';
 
 type SubmissionItemProps = {
   id: string;

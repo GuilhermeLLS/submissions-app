@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
-import { Box, Text, Link as ChakraLink } from '@chakra-ui/react';
+import { Box, Text, Heading, Flex, Link as ChakraLink } from '@chakra-ui/react';
 import SubmissionsService from '../../services/SubmissionsService';
+import { parseDate } from 'utils/component-utils';
 
 type SubmissionPageProps = {
   id: string;
@@ -22,14 +23,43 @@ export default function SubmissionPage({
         <title>View {id}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Box m={[2, 5]}>
+      <Box>
         <Link href="/" passHref>
-          <ChakraLink textDecoration="underline"> ↩ Home</ChakraLink>
+          <ChakraLink
+            fontSize="xl"
+            textDecoration="underline"
+            _hover={{ color: 'blue.300' }}
+          >
+            ↩ Home
+          </ChakraLink>
         </Link>
-        <Text>Submission id: {id}</Text>
-        <Text> Created at: {createdAt}</Text>
-        <Text> Submission content: </Text>
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        <Flex
+          p={[3, 10]}
+          bg="blue.300"
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Heading as="h1" color="white">
+            Viewing submission
+          </Heading>
+          <Heading wordBreak="break-word" as="h2" color="white">
+            {id}
+          </Heading>
+        </Flex>
+        <Box m={[2, 5]}>
+          <Text> Submission created at: {parseDate(createdAt)} </Text>
+          <Text> Submission content: </Text>
+          <Box
+            as="article"
+            sx={{
+              h1: {
+                fontSize: '2xl',
+              },
+            }}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </Box>
       </Box>
     </Fragment>
   );

@@ -1,6 +1,6 @@
 import { render, screen } from 'utils/test-utils';
 import SubmissionItem from './SubmissionItem';
-import { parseDate } from './SubmissionItem.utils';
+import { parseDate } from 'utils/component-utils';
 
 describe('<SubmissionItem />', () => {
   it('should render component', () => {
