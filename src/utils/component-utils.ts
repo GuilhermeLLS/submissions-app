@@ -1,9 +1,9 @@
 export function parseDate(createdAt: number) {
   return (
-    new Date(createdAt).toLocaleTimeString('en-US') +
+    new Date(createdAt).toLocaleTimeString('') +
     ' - ' +
     new Date(createdAt)
-      .toLocaleDateString('en-US', {
+      .toLocaleDateString('', {
         day: '2-digit',
         month: 'short',
       })
