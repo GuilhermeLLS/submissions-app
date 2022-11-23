@@ -24,6 +24,12 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ],
   "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
